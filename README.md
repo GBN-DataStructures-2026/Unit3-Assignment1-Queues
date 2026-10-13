@@ -30,19 +30,17 @@ java QueueTest
 ## Your Tasks
 
 ### Task 1: `ArrayQueue.java`
-Implement a circular array queue that dynamically resizes as elements are added or removed.
+Implement a circular, floating-front array queue that dynamically resizes as elements are added or removed.
 
 * **Empty Indicator:** Set `rear = -1` in the constructor to signify an empty queue.
-* **Dynamic `size()` Calculation:** Do **not** use a `size` instance variable in `ArrayQueue`. Instead, compute the logical size on demand using `front`, `rear`, and `queue.length`:
-  * **Case 1 (Empty):** If $rear == -1$, return `0`.
-  * **Case 2 (Unwrapped):** If $rear \ge front$, return $rear - front + 1$.
-  * **Case 3 (Wrapped):** If $rear < front$, return $\text{queue.length} - front + rear + 1$.
+* **Dynamic `size()` Calculation:** Try **not** to use a `size` instance variable in `ArrayQueue`. Instead, compute the logical size on demand using `front`, `rear`, and `queue.length`
+
 * **Pointer Advancements:**
-  * When adding an element to an empty queue, set `front = 0` and `rear = 0`. Otherwise, advance `rear` using modulo arithmetic: `rear = (rear + 1) % queue.length`.
   * When removing the last remaining element ($\text{size()} == 1$), reset `front = 0` and `rear = -1`. Otherwise, advance `front`: `front = (front + 1) % queue.length`.
 * **Resizing (`checkSize()`):**
+  * Call checkSize() before you add and after you remove.
   * Double array capacity when `size() == queue.length`.
-  * Halve array capacity when `size() < queue.length / 4` (maintaining a minimum capacity of 10).
+  * Halve array capacity when `size() < queue.length / 4`.
   * Re-align elements starting at index 0 of the new array and reassign `front = 0` and `rear = size() - 1` (or `rear = -1` if empty).
 
 ---
@@ -50,9 +48,8 @@ Implement a circular array queue that dynamically resizes as elements are added 
 ### Task 2: `LinkedQueue.java`
 Implement a linked queue using `LLNode<T>` nodes.
 
-* Maintain `front` and `rear` references to `LLNode<T>` objects, as well as an explicit `size` instance variable.
-* **`add(T item)`:** Create a new node. If empty, point both `front` and `rear` to it. Otherwise, link the current `rear` node to the new node and update `rear`.
-* **`remove()`:** Remove the node at `front` and return its data. Throw `QueueUnderflowException` if empty. If `front` becomes `null`, update `rear` to `null` as well.
+* Maintain `front` and `rear` references to `LLNode<T>` objects, as well as an explicit `size` instance variable.  (Otherwise calculating size would be O(n)).
+
 
 ---
 

@@ -26,9 +26,7 @@ public class ArrayQueue<T> implements QueueInterface<T>
     public int size()
     {
         // TODO: Calculate and return logical size
-        // Case 1: Queue is empty (rear == -1) -> size is 0
-        // Case 2: Unwrapped (rear >= front)   -> size is (rear - front + 1)
-        // Case 3: Wrapped (rear < front)     -> size is (queue.length - front + rear + 1)
+        
         return 0;
     }
 
@@ -41,10 +39,7 @@ public class ArrayQueue<T> implements QueueInterface<T>
     public T add(T item)
     {
         // TODO: Add item to the rear of the queue
-        // 1. Call checkSize() to expand array if full (size() == queue.length)
-        // 2. If queue is empty (rear == -1), set front = 0 and rear = 0
-        // 3. Otherwise, advance rear: rear = (rear + 1) % queue.length
-        // 4. Place item at queue[rear] and return item
+        
         return null;
     }
 
@@ -58,12 +53,7 @@ public class ArrayQueue<T> implements QueueInterface<T>
     public T remove()
     {
         // TODO: Remove and return element at front
-        // 1. Throw QueueUnderflowException if empty
-        // 2. Save queue[front] and set queue[front] = null (prevent memory leaks)
-        // 3. If removing the last remaining item (size() == 1), reset front = 0 and rear = -1
-        // 4. Otherwise, advance front: front = (front + 1) % queue.length
-        // 5. Call checkSize() to handle array shrinking
-        // 6. Return saved element
+
         return null;
     }
 

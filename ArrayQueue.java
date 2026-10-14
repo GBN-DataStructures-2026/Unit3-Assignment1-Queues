@@ -69,6 +69,6 @@ public class ArrayQueue<T> implements QueueInterface<T>
         // 1. If full (size() == queue.length), expand capacity (e.g., double length)
         // 2. If sparse (size() < queue.length / 4 && queue.length > DEFAULT_CAPACITY), shrink capacity
         // 3. Re-align remaining elements starting at index 0 of the new array
-        // 4. Reset front = 0 and rear = newSize - 1 (or rear = -1 if empty)
+        // 4. Reset front = 0 and rear = size() - 1 (or rear = -1 if empty)
     }
 }

@@ -30,9 +30,7 @@ public class LinkedQueue<T> implements QueueInterface<T>
     public T add(T item)
     {
         // TODO: Create a new LLNode with item
-        // 1. If queue is empty, set front and rear to newNode
-        // 2. Otherwise, rear.setLink(newNode) and rear = newNode
-        // 3. Increment size and return item
+        // consider special case if queue is empty
         return null;
     }
 
@@ -46,16 +44,12 @@ public class LinkedQueue<T> implements QueueInterface<T>
     public T remove()
     {
         // TODO: Remove front node and return its info
-        // 1. Throw QueueUnderflowException if empty
-        // 2. Save info from front node
-        // 3. Advance front = front.getLink()
-        // 4. If front is now null, set rear = null
-        // 5. Decrement size and return saved info
+
         return null;
     }
 
     public void clear()
     {
-        // TODO: Reset front = null, rear = null, size = 0
+        // TODO: write method
     }
 }

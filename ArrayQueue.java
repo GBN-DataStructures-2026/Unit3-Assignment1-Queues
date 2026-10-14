@@ -5,7 +5,7 @@
  */
 public class ArrayQueue<T> implements QueueInterface<T>
 {
-    private static final int DEFAULT_CAPACITY = 1;
+    private static final int DEFAULT_CAPACITY = 10;
 
     private T[] queue;
     private int front;
